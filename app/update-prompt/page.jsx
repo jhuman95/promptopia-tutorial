@@ -59,7 +59,6 @@ const EditPrompt = () => {
     }
 
   return (
-    <Suspense>
         <Form
             type="Edit"
             post={post}
@@ -67,8 +66,15 @@ const EditPrompt = () => {
             submitting={submitting}
             handleSubmit={updatePrompt}
         />
-    </Suspense>
   )
 }
 
-export default EditPrompt
+const Page = () => {
+    return(
+        <Suspense>
+            <EditPrompt />
+        </Suspense>
+    )
+}
+
+export default Page
