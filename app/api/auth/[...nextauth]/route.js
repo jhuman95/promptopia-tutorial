@@ -31,6 +31,7 @@ const handler = NextAuth({
                 })
                 /* else create new user and save it to DB */
                 if (!userExists) {
+                    console.log("Created new User")
                     const newUser = {
                         email: profile.email,
                         username: profile.name.replace(" ", "").toLowerCase(),
